@@ -19,32 +19,32 @@ import { useState } from "react"
 import {Todo} from "./types/types"
 // #endregion
 
+export const initialTodos: Todo[] = [
+  {
+    id: 1,
+    title: 'Buy milk',
+    completed: true
+  },
+  {
+    id: 2,
+    title: 'Cook dinner',
+    completed: true
+  },
+  {
+    id: 3,
+    title: 'Learn JS',
+    completed: true
+  },
+  {
+    id: 4,
+    title: 'YAYYYY',
+    completed: true
+  }
+]
+
 function App() {
 
   // #region "State Objects and pieces"
-  const initialTodos: Todo[] = [
-    {
-      id: 1,
-      title: 'Buy milk',
-      completed: true
-    },
-    {
-      id: 2,
-      title: 'Cook dinner',
-      completed: true
-    },
-    {
-      id: 3,
-      title: 'Learn JS',
-      completed: true
-    },
-    {
-      id: 4,
-      title: 'YAYYYY',
-      completed: true
-    }
-  ]
-
   const [todos, setTodos] = useState<Todo[]>(initialTodos)
   const [showCompleted, setShowCompleted] = useState<boolean>(false)
   // #endregion
