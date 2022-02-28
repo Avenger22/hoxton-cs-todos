@@ -1,5 +1,5 @@
-import TodoCompleted from "./TodoCompleted";
-import {Todo} from "../types/types"
+import TodoCompleted from "../TodoCompleted/TodoCompleted";
+import {Todo} from "../../types/types"
 
 type props = {
     todos: Todo[]
@@ -25,7 +25,7 @@ export default function CompletedSection({todos, setTodos, showCompleted, toggle
                 
                     {
                         // @ts-ignore
-                        getCompletedTodos().map(todo => 
+                        getCompletedTodos(todos).map(todo => 
                             
                             <TodoCompleted 
                                 todo = {todo}
@@ -33,6 +33,8 @@ export default function CompletedSection({todos, setTodos, showCompleted, toggle
                                 toggleTodo = {toggleTodo}
                                 deleteTodo = {deleteTodo}
                                 editTodo = {editTodo}
+                                todos = {todos}
+                                setTodos = {setTodos}
                             />
 
                         )

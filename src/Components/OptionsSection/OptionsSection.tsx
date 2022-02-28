@@ -1,3 +1,5 @@
+import {Todo} from "../../types/types"
+
 type props = {
     showCompleted: boolean,
     setShowCompleted: React.Dispatch<React.SetStateAction<boolean>>

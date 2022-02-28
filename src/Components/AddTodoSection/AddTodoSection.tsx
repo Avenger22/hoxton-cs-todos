@@ -1,8 +1,12 @@
+import {Todo} from "../../types/types"
+
 type props = {
     addTodo: Function
+    todos: Todo[]
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
 }
 
-export default function AddTodoSection({addTodo}:props) {
+export default function AddTodoSection({addTodo, todos, setTodos}:props) {
 
     return (
 
@@ -14,7 +18,7 @@ export default function AddTodoSection({addTodo}:props) {
 
                 <form className="add-item" onSubmit={function (e) {
                     e.preventDefault()
-                    addTodo(e.target.title.value)
+                    addTodo(e.target.title.value, todos, setTodos)
                 }}>
 
                     <input className="text-input" type="text" name="title" required={true} minLength={3}

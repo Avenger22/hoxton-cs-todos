@@ -6,12 +6,15 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "testvite"
+    "test": "vitest"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "vite-test": "^0.4.0"
+    "vite-test": "^0.4.0",
+    "vitest": "^0.5.8"
   },
   "devDependencies": {
     "@types/react": "^17.0.33",

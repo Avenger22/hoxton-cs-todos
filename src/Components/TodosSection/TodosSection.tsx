@@ -1,5 +1,5 @@
-import TodoLi from "./TodoLi";
-import {Todo} from "../types/types"
+import TodoLi from "../TodoLi/TodoLi";
+import {Todo} from "../../types/types"
 
 type props = {
     todos: Todo[]
@@ -24,7 +24,7 @@ export default function TodosSection({todos, setTodos, toggleTodo, deleteTodo, e
                 
                     {
                         //@ts-ignore
-                        getIncompleteTodos().map(todo => 
+                        getIncompleteTodos(todos).map(todo => 
                             
                             <TodoLi
                                 todo = {todo}
@@ -32,6 +32,8 @@ export default function TodosSection({todos, setTodos, toggleTodo, deleteTodo, e
                                 toggleTodo = {toggleTodo}
                                 deleteTodo = {deleteTodo}
                                 editTodo = {editTodo}
+                                todos = {todos}
+                                setTodos = {setTodos}
                             />  
                             
                         )
