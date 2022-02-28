@@ -42,11 +42,15 @@ export const initialTodos: Todo[] = [
   }
 ]
 
+export const [todos, setTodos] = useState<Todo[]>(initialTodos)
+
 function App() {
 
   // #region "State Objects and pieces"
-  const [todos, setTodos] = useState<Todo[]>(initialTodos)
+  
+  // const [todos, setTodos] = useState<Todo[]>(initialTodos)
   const [showCompleted, setShowCompleted] = useState<boolean>(false)
+  
   // #endregion
 
   // #region "Returning HTML JSX"

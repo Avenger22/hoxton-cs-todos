@@ -9,7 +9,7 @@ export function getIncompleteTodos (todos: Todo[]): Todo[] {
     return todos.filter(todo => todo.completed === false)
 }
   
-export function toggleTodo (individualTodoId: Todo, todos: Todo[], setTodos:any): void {
+export function toggleTodo (individualTodoId: number, todos: Todo[], setTodos:any): void {
 
     // const match: Todo | undefined = todos.find(todo => todo.title = individualTodo.title)
     // // @ts-ignore
