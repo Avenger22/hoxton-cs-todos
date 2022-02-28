@@ -48,19 +48,14 @@ export function deleteTodo (title: string, todos: Todo[], setTodos: any): void {
     setTodos(updatedTodos)
 }
   
-export function editTodo (individualTodo: Todo, newTitle: string, todos: Todo[]): void {
+export function editTodo (individualTodo: Todo, newTitle: string, todos: Todo[], setTodos: any): void {
 
+    let todosCopy = JSON.parse(JSON.stringify(todos))
     const match: Todo | undefined = todos.find(todo => todo.title = individualTodo.title)
+    
     // @ts-ignore
     match.title = newTitle
-
-    const newTodo = {
-      title: newTitle,
-      // @ts-ignore
-      completed: match.completed
-    }
-
-    const newArray = [...todos, newTodo]
+    setTodos(todosCopy)
     
 }
   
