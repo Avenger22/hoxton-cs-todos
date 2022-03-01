@@ -13,9 +13,9 @@ editTodo
 } from "./helpersFunctions"
 
 import {Todo} from "../types/types"
-import { useStore } from '../zustand/store'
+import { useStore as Hook } from '../zustand/store'
 
-const {setTodos} = useStore()
+const {setTodos} = Hook()
 // #endregion
 
 // #region "Initial Data"
