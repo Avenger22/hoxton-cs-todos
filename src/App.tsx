@@ -42,36 +42,20 @@ export const initialTodos: Todo[] = [
   }
 ]
 
-export const [todos, setTodos] = useState<Todo[]>(initialTodos)
-
 function App() {
-
-  // #region "State Objects and pieces"
-  
-  // const [todos, setTodos] = useState<Todo[]>(initialTodos)
-  const [showCompleted, setShowCompleted] = useState<boolean>(false)
-  
-  // #endregion
 
   // #region "Returning HTML JSX"
   return (
     
     <main>
 
-      <OptionsSection 
-        showCompleted = {showCompleted}
-        setShowCompleted = {setShowCompleted}
-      />
+      <OptionsSection />
 
       <AddTodoSection 
         addTodo = {addTodo}
-        todos = {todos}
-        setTodos = {setTodos}
       />
 
       <TodosSection 
-        todos = {todos}
-        setTodos = {setTodos}
         toggleTodo = {toggleTodo}
         deleteTodo = {deleteTodo}
         editTodo = {editTodo}
@@ -79,9 +63,6 @@ function App() {
       />
 
       <CompletedSection 
-        todos = {todos}
-        setTodos = {setTodos}
-        showCompleted = {showCompleted}
         toggleTodo = {toggleTodo}
         deleteTodo = {deleteTodo}
         editTodo = {editTodo}

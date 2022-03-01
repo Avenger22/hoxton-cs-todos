@@ -1,16 +1,17 @@
 import {Todo} from "../../types/types"
+import { useStore } from "../../zustand/store"
 
 type props = {
     todo: Todo
     toggleTodo: Function 
     deleteTodo: Function 
     editTodo: Function
-    todos: Todo[]
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
 }
 
-export default function TodoLi({todo, toggleTodo, deleteTodo, editTodo, todos, setTodos}: props) {
+export default function TodoLi({todo, toggleTodo, deleteTodo, editTodo}: props) {
 
+    const {todos, setTodos} = useStore()
+    
     return (
 
         <>

@@ -1,17 +1,17 @@
+import { useStore } from "../../zustand/store";
 import TodoLi from "../TodoLi/TodoLi";
-import {Todo} from "../../types/types"
 
 type props = {
-    todos: Todo[]
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
     toggleTodo: Function 
     deleteTodo: Function 
     editTodo: Function
     getIncompleteTodos: Function
 }
 
-export default function TodosSection({todos, setTodos, toggleTodo, deleteTodo, editTodo, getIncompleteTodos}:props) {
+export default function TodosSection({toggleTodo, deleteTodo, editTodo, getIncompleteTodos}:props) {
 
+    const {todos, setTodos} = useStore()
+    
     return (
 
         <>
@@ -32,7 +32,9 @@ export default function TodosSection({todos, setTodos, toggleTodo, deleteTodo, e
                                 toggleTodo = {toggleTodo}
                                 deleteTodo = {deleteTodo}
                                 editTodo = {editTodo}
+                                // @ts-ignore
                                 todos = {todos}
+                                // @ts-ignore
                                 setTodos = {setTodos}
                             />  
                             

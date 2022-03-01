@@ -1,11 +1,8 @@
-import {Todo} from "../../types/types"
+import { useStore } from "../../zustand/store"
 
-type props = {
-    showCompleted: boolean,
-    setShowCompleted: React.Dispatch<React.SetStateAction<boolean>>
-}
+export default function OptionsSection() {
 
-export default function OptionsSection({showCompleted, setShowCompleted}:props) {
+    const {showCompleted, setShowCompleted} = useStore()
 
     return (
 
@@ -21,7 +18,7 @@ export default function OptionsSection({showCompleted, setShowCompleted}:props) 
                     
                     <input className="show-completed-checkbox" type="checkbox" checked={showCompleted} 
                     onChange = {function (e) {
-                        setShowCompleted(!showCompleted)
+                        setShowCompleted()
                     }}/>
 
                 </label>

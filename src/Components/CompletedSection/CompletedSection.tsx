@@ -1,18 +1,17 @@
+import { useStore } from "../../zustand/store";
 import TodoCompleted from "../TodoCompleted/TodoCompleted";
-import {Todo} from "../../types/types"
 
 type props = {
-    todos: Todo[]
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
-    showCompleted: boolean
     toggleTodo: Function 
     deleteTodo: Function 
     editTodo: Function
     getCompletedTodos: Function
 }
 
-export default function CompletedSection({todos, setTodos, showCompleted, toggleTodo, deleteTodo, editTodo, getCompletedTodos}:props) {
+export default function CompletedSection({toggleTodo, deleteTodo, editTodo, getCompletedTodos}:props) {
 
+    const {showCompleted, todos, setTodos} = useStore()
+    
     return (
 
         <>
@@ -34,6 +33,7 @@ export default function CompletedSection({todos, setTodos, showCompleted, toggle
                                 deleteTodo = {deleteTodo}
                                 editTodo = {editTodo}
                                 todos = {todos}
+                                //@ts-ignore
                                 setTodos = {setTodos}
                             />
 

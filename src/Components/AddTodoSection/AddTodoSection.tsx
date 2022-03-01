@@ -1,13 +1,13 @@
-import {Todo} from "../../types/types"
+import { useStore } from "../../zustand/store"
 
 type props = {
     addTodo: Function
-    todos: Todo[]
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
 }
 
-export default function AddTodoSection({addTodo, todos, setTodos}:props) {
+export default function AddTodoSection({addTodo}:props) {
 
+    const {todos, setTodos} = useStore()
+    
     return (
 
         <>
@@ -18,6 +18,7 @@ export default function AddTodoSection({addTodo, todos, setTodos}:props) {
 
                 <form className="add-item" onSubmit={function (e) {
                     e.preventDefault()
+                    //@ts-ignore
                     addTodo(e.target.title.value, todos, setTodos)
                 }}>
 
